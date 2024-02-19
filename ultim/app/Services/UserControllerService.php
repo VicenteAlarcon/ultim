@@ -24,7 +24,7 @@ class UserControllerService
 
    public function updateUser($userId, $userData)
    {
-    $user = findOrFail($userId)
+    $user = findOrFail($userId);
     $user->update($userData);
     return $user;
 
