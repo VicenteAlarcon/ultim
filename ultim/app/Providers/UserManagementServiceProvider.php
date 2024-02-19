@@ -11,8 +11,8 @@ class UserManagementServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(UserManagementService::class, function ($app) {
-            return new UserManagementService();
+        $this->app->singleton(UserControllerService::class, function ($app) {
+            return new UserControllerService();
         });
     }
 

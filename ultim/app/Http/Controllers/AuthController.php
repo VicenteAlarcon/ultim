@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\UserManagementService;
+use App\Services\UserControllerService;
 class AuthController extends Controller
 {
      //Inyección de dependencias
 
      protected $userService;
 
-     public function __construct(UserManagementService $userService)
+     public function __construct(UserControllerService $userService)
      {
         $this->userService = $userService;
      }
