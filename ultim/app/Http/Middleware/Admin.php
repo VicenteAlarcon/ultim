@@ -16,8 +16,8 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = Auth::user();
-        if($user->type === "admin"){
+     
+        if(Auth::user()->type === "admin"){
         return $next($request);
         }else{
             return redirect('/')->withSuccess('Acceso denegado');
