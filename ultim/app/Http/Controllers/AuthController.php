@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\UserControllerService;
+use App\Models\User;
 class AuthController extends Controller
+
 {
      //Inyección de dependencias
 
@@ -38,7 +40,12 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $userData = new User();
+       $userData->name = $request->input('name');
+       $userData->email = $request->input('email');
+       $userData->password = $request->input('password');
+       $userData->type = $request->input('type');
+       $user->$this->userService->createUser($userData);
     }
 
     /**
