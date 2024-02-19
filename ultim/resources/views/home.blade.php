@@ -1,3 +1,5 @@
-<div>
-    <!-- Because you are alive, everything is possible. - Thich Nhat Hanh -->
-</div>
+@extends('layouts.layout')
+@section('contenido')
+
+<h1>Bienvenido a la página protegida por middleware de autenticación</h1>
+@endsection

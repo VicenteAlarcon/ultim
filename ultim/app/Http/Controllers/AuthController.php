@@ -3,15 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Services\UserManagementService;
 class AuthController extends Controller
 {
+     //Inyección de dependencias
+
+     protected $userService;
+
+     public function __construct(UserManagementService $userService)
+     {
+        $this->userService = $userService;
+     }
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        
+        $users = $this->userService->getAllUsers();
+        return view('users.index', ['users'=> $users]);
     }
 
     /**
