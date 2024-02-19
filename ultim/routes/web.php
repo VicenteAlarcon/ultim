@@ -18,8 +18,8 @@ Route::resource('users', AuthController::class);
 Route::get('/', function () {
  return view('welcome');
 });
+Route::middleware(['admin'])->group(function() {
+    Route::get('/home', [AuthController::class, 'index']);
+});
 
-Route::get('/home', function () {
-    return view('home');
-})->middleware('admin');
 
