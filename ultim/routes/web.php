@@ -16,6 +16,10 @@ use App\Http\Controllers\AuthController;
 Route::resource('users', AuthController::class);
 
 Route::get('/', function () {
+ return view('welcome');
+});
+
+Route::get('/home', function () {
     return view('home')->middleware('admin');
 });
 
