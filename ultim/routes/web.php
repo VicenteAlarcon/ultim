@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::resource('users', AuthController::class);
 
 Route::get('/', function () {
-    return view('home')->$middleware('auth');
+    return view('home')->middleware('admin');
 });
 
