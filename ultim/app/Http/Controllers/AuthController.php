@@ -41,10 +41,10 @@ class AuthController extends Controller
     public function store(Request $request)
     {
        $userData = [
-           'name' = $request->input('name'),
-           'email' = $request->input('email'),
-           'password' = $request->input('password'),
-           'type' = $request->input('type'),
+           'name' => $request->input('name'),
+           'email' => $request->input('email'),
+           'password' => $request->input('password'),
+           'type' => $request->input('type'),
        ];
      
        $user->$this->userService->createUser($userData);
